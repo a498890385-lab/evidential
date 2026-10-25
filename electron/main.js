@@ -8,16 +8,17 @@ const LEGACY_APP_NAME = '贝叶斯论证工作台';
 
 let mainWindow = null;
 
-// 一次性迁移：新目录还没有 data/、而旧目录有时，整棵复制过来。
-// 用 cpSync 而不是 rename，避免跨盘/占用时失败；失败只告警，不阻塞启动。
+// 一次性迁移：只搬应用自己的 data/ 子目录。
+// 不要整棵复制 userData —— 里面混着 Chromium 的 Session Storage 等运行时文件，
+// 那些在启动时已被占用，拷不动会静默丢文件，也没必要搬。
 function migrateLegacyData() {
   try {
     const userData = app.getPath('userData');
     const currentData = path.join(userData, 'data');
-    const legacyRoot = path.join(app.getPath('appData'), LEGACY_APP_NAME);
-    if (fs.existsSync(currentData) || !fs.existsSync(legacyRoot)) return;
+    const legacyData = path.join(app.getPath('appData'), LEGACY_APP_NAME, 'data');
+    if (fs.existsSync(currentData) || !fs.existsSync(legacyData)) return;
     fs.mkdirSync(userData, { recursive: true });
-    fs.cpSync(legacyRoot, userData, { recursive: true });
+    fs.cpSync(legacyData, currentData, { recursive: true });
   } catch (error) {
     console.warn('[migrate] 迁移旧数据失败：', error.message);
   }
