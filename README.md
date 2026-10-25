@@ -1,5 +1,8 @@
 # 依证推事
 
+[![CI](https://github.com/a498890385-lab/evidential/actions/workflows/ci.yml/badge.svg)](https://github.com/a498890385-lab/evidential/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 > 依证据，推事情。
 
 把"我更相信 A 而不是 B"这种模糊判断，拆成**假设 + 证据 + 似然比**，算出后验概率，并导出可复核的报告。

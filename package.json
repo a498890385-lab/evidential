@@ -5,6 +5,14 @@
   "description": "依证推事：把假设、证据、似然比算成后验概率，并导出可复核的报告",
   "license": "MIT",
   "author": "朱永洲",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a498890385-lab/evidential.git"
+  },
+  "homepage": "https://github.com/a498890385-lab/evidential#readme",
+  "bugs": {
+    "url": "https://github.com/a498890385-lab/evidential/issues"
+  },
   "engines": {
     "node": ">=20"
   },
