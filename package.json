@@ -1,8 +1,8 @@
 {
-  "name": "bayes-workbench",
-  "productName": "贝叶斯论证工作台",
+  "name": "evidential",
+  "productName": "依证推事",
   "version": "1.0.0",
-  "description": "交互式贝叶斯论证工作台：假设-证据-后验-报告",
+  "description": "依证推事：把假设、证据、似然比算成后验概率，并导出可复核的报告",
   "license": "MIT",
   "author": "朱永洲",
   "engines": {
@@ -21,8 +21,8 @@
     "dist:installer": "vite build && electron-builder --win nsis"
   },
   "build": {
-    "appId": "com.bayesworkbench.app",
-    "productName": "贝叶斯论证工作台",
+    "appId": "com.evidential.app",
+    "productName": "依证推事",
     "directories": {
       "output": "release"
     },
@@ -39,17 +39,17 @@
       "icon": "build/icon.ico"
     },
     "portable": {
-      "artifactName": "贝叶斯论证工作台-${version}.exe"
+      "artifactName": "依证推事-${version}.exe"
     },
     "nsis": {
-      "artifactName": "贝叶斯论证工作台-${version}-安装版.exe",
+      "artifactName": "依证推事-${version}-安装版.exe",
       "oneClick": false,
       "perMachine": false,
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "贝叶斯论证工作台",
-      "uninstallDisplayName": "贝叶斯论证工作台",
+      "shortcutName": "依证推事",
+      "uninstallDisplayName": "依证推事",
       "deleteAppDataOnUninstall": false
     }
   },

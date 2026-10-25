@@ -70,7 +70,7 @@ export function ReportDialog() {
     try {
       const res = await bridge.report.pdf({
         defaultName: `${name}.pdf`,
-        html: reportHtml(`${session.title} · 贝叶斯论证报告`, markdown)
+        html: reportHtml(`${session.title} · 依证推事报告`, markdown)
       });
       if (res.ok) {
         notify('已导出 PDF');

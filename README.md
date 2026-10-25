@@ -1,4 +1,6 @@
-# 贝叶斯论证工作台
+# 依证推事
+
+> 依证据，推事情。
 
 把"我更相信 A 而不是 B"这种模糊判断，拆成**假设 + 证据 + 似然比**，算出后验概率，并导出可复核的报告。
 
@@ -63,8 +65,8 @@ Windows 用户也可以直接下载 [Releases](../../releases) 里的 exe，不�
 ## 数据在哪
 
 ```
-%APPDATA%\贝叶斯论证工作台\data\      # Windows
-~/Library/Application Support/贝叶斯论证工作台/data/   # macOS
+%APPDATA%\依证推事\data\      # Windows
+~/Library/Application Support/依证推事/data/   # macOS
 ```
 
 卸载默认保留数据。会话可导出成 JSON 自行备份。

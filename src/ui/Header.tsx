@@ -14,7 +14,7 @@ export function Header() {
     <header className="topbar">
       <div className="brand">
         <span className="brand-mark">β</span>
-        <span>贝叶斯论证工作台</span>
+        <span>依证推事</span>
       </div>
 
       <select

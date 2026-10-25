@@ -75,7 +75,7 @@ export function buildReportMarkdown(session: Session, opts: ReportOptions = {}):
   const bf = odds(base.final[focusId]) / Math.max(odds(base.initial[focusId]), 1e-12);
 
   const lines: string[] = [];
-  lines.push(`# 贝叶斯论证报告 · ${session.title}`);
+  lines.push(`# 依证推事报告 · ${session.title}`);
   lines.push('');
   lines.push(
     `> 生成时间：${fmtTime(now)}　证据 ${session.evidence.length} 条（采纳 ${adopted.length} / 否决 ${rejected.length}）`

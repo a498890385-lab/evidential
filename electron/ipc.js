@@ -98,7 +98,7 @@ function registerIpc(getWin) {
     const win = getWin();
     const filePath = await pickSavePath(win, {
       title: '导出 Markdown 报告',
-      defaultPath: path.join(storage.exportsDir(), defaultName || '贝叶斯论证报告.md'),
+      defaultPath: path.join(storage.exportsDir(), defaultName || '依证推事报告.md'),
       filters: [{ name: 'Markdown', extensions: ['md'] }]
     });
     if (!filePath) return { ok: false, canceled: true };
@@ -110,7 +110,7 @@ function registerIpc(getWin) {
     const win = getWin();
     const filePath = await pickSavePath(win, {
       title: '导出 PDF 报告',
-      defaultPath: path.join(storage.exportsDir(), defaultName || '贝叶斯论证报告.pdf'),
+      defaultPath: path.join(storage.exportsDir(), defaultName || '依证推事报告.pdf'),
       filters: [{ name: 'PDF', extensions: ['pdf'] }]
     });
     if (!filePath) return { ok: false, canceled: true };
