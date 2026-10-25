@@ -1,0 +1,73 @@
+{
+  "name": "bayes-workbench",
+  "productName": "贝叶斯论证工作台",
+  "version": "1.0.0",
+  "description": "交互式贝叶斯论证工作台：假设-证据-后验-报告",
+  "license": "MIT",
+  "author": "朱永洲",
+  "engines": {
+    "node": ">=20"
+  },
+  "main": "electron/main.js",
+  "scripts": {
+    "dev:web": "vite",
+    "dev": "node scripts/dev.mjs",
+    "build:web": "vite build",
+    "start": "electron .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "dist": "vite build && electron-builder --win portable",
+    "dist:installer": "vite build && electron-builder --win nsis"
+  },
+  "build": {
+    "appId": "com.bayesworkbench.app",
+    "productName": "贝叶斯论证工作台",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "electron/**/*",
+      "dist/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "portable",
+        "nsis"
+      ],
+      "icon": "build/icon.ico"
+    },
+    "portable": {
+      "artifactName": "贝叶斯论证工作台-${version}.exe"
+    },
+    "nsis": {
+      "artifactName": "贝叶斯论证工作台-${version}-安装版.exe",
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "贝叶斯论证工作台",
+      "uninstallDisplayName": "贝叶斯论证工作台",
+      "deleteAppDataOnUninstall": false
+    }
+  },
+  "dependencies": {
+    "echarts": "^6.1.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "zustand": "^5.0.16"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "electron": "^45.0.0",
+    "electron-builder": "^26.18.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
+  }
+}
